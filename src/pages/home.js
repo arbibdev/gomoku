@@ -1,0 +1,7 @@
+const Home = () => {
+    return (
+        <h1 style={{textAlign:"center"}}>ICI NOTRE FUTUR GOMOKU !</h1>
+    )
+}
+
+export default Home
