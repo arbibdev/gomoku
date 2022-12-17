@@ -1,0 +1,11 @@
+.canvas{
+    height:70vh;
+}
+
+.canvasContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10vh;
+    height:80vh;
+}
