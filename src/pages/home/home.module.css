@@ -22,7 +22,7 @@
 
 @keyframes buttonHover {
     from {
-        border: 5px solid white;
+        border: 5px solid black;
         background-size: auto 100%;
     }
     to {

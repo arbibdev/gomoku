@@ -1,5 +1,5 @@
 const printBackground = (data, images) => {
-    data.ctx.fillStyle = 'white'
+    data.ctx.fillStyle = '#a6683e'
     data.ctx.fillRect(0, 0, data.canvas.width, data.canvas.height)
     for (var y = 0; y < 18; y++){
         for (var x = 0; x < 18; x++)
@@ -11,7 +11,7 @@ const printBackground = (data, images) => {
     }
 }
 
-const initGame = (images) => {
+const initGame = (images, playerColor) => {
     var data = {}
     data.canvas = document.getElementById('canvas')
     data.ctx = data.canvas.getContext('2d')
@@ -23,7 +23,7 @@ const initGame = (images) => {
         var heightSquare = canvasOffsetHeight / 19
         printBackground(data, images)
         data.ctx.drawImage(
-            images.blackPiece,(
+            playerColor === 'white' ? images.whitePiece : images.blackPiece,(
                 (Math.floor(e.offsetX / widthSquare) * widthSquare) *
                 (data.canvas.width / canvasOffsetWidth) +
                 (data.canvas.width / 19) / 2 - images.blackPiece.width / 2
