@@ -79,11 +79,13 @@ const canvasOnMouseMove = (e, data, images, playerColor) => {
     var canvasOffsetHeight = data.canvas.offsetHeight
     var stone = getStonePosition(data, e, canvasOffsetWidth, canvasOffsetHeight)
     printBoard(data, images)
+    data.ctx.globalAlpha = 0.5
     data.ctx.drawImage(
         playerColor === 'white' ? images.whitePiece : images.blackPiece,
         images.gomokuBoard.width * stone.x,
         images.gomokuBoard.height * stone.y
     )
+    data.ctx.globalAlpha = 1
 }
 
 const checkWinner = (data) => {
