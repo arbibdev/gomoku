@@ -1,4 +1,5 @@
-import getRandomInt from '../../tools/getRandomInt'
+import ia from './ia'
+import checkEndGame from './checkEndGame'
 
 const printBackground = (data, images) => {
     data.ctx.fillStyle = '#a6683e'
@@ -51,27 +52,6 @@ const getStonePosition = (data, e, canvasOffsetWidth, canvasOffsetHeight) => {
     }
 }
 
-const playRandom = (data, playerColor) => {
-    var x = getRandomInt(19)
-    var y = getRandomInt(19)
-    while (data.board[y][x]){
-        x++
-        if (x === 19){
-            x = 0
-            y++
-        }
-        if (y === 19)
-            y = 0
-    }
-    data.board[y][x] = playerColor === 'black' ? 'white' : 'black'
-}
-
-const ia = (data, playerColor) => {
-    playRandom(data, playerColor)
-    // for (var c = 0; c < 500000000; c++);
-
-}
-
 const canvasOnMouseMove = (e, data, images, playerColor) => {
     if (data.endGame || data.turn === 'ia')
         return
@@ -88,25 +68,11 @@ const canvasOnMouseMove = (e, data, images, playerColor) => {
     data.ctx.globalAlpha = 1
 }
 
-const checkWinner = (data) => {
-
-}
-
-const checkFullBoard = (data) => {
-
-}
-
-const checkEndGame = (data) => {
-    if ((data.winner = checkWinner(data)) !== false)
-        data.endGame = true
-    else if (checkFullBoard(data))
-        data.endGame = true
-}
-
 const launchIa = (data, images, playerColor) => {
     const startIa = Date.now();
-    ia(data, playerColor)
+    var pos = ia(data, playerColor)
     const timeIa = Date.now() - startIa
+    data.board[pos.y][pos.x] = playerColor === 'black' ? 'white' : 'black'
     var nbSeconds = Math.floor(timeIa / 1000) % 1000
     var nbMilliSeconds = `${timeIa % 1000}`.padStart(3, '0')
     data.iaMoves += 1
@@ -125,12 +91,14 @@ const canvasOnClick = (e, data, images, playerColor) => {
     var canvasOffsetWidth = data.canvas.offsetWidth
     var canvasOffsetHeight = data.canvas.offsetHeight
     var stone = getStonePosition(data, e, canvasOffsetWidth, canvasOffsetHeight)
-    data.board[stone.y][stone.x] = playerColor
-    printBoard(data, images)
-    if ((data.endGame = checkEndGame(data)) === true)
-        return
-    data.turn = 'ia'
-    launchIa(data, images, playerColor)
+    if (!data.board[stone.y][stone.x]){
+        data.board[stone.y][stone.x] = playerColor
+        printBoard(data, images)
+        if ((data.endGame = checkEndGame(data)) === true)
+            return
+        data.turn = 'ia'
+        launchIa(data, images, playerColor)
+    }
 }
 
 const canvasOnMouseLeave = (e, data, images) => {
