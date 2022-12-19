@@ -32,7 +32,7 @@ const ChooseYourColor = ({setPlayerColor, images}) => {
     )
 }
 
-const StartGame = ({images}) => {
+const Board = ({images}) => {
     return (
         <div className={styles.canvasContainer}>
             <canvas
@@ -41,6 +41,14 @@ const StartGame = ({images}) => {
                 height={`${images.gomokuBoard.height * 18 + images.blackPiece.height}`}
                 className={styles.canvas}>
             </canvas>
+            <div className={styles.infos}>
+                <div style={{color:'white', width:'100%', display:'flex', justifyContent:'space-around'}}>
+                    <p>IA'S RESPONSE</p>
+                    <p>Last Move :<span id='timer' style={{marginLeft:'10px'}}></span></p>
+                    <p>Average :<span id='timerAverage' style={{marginLeft:'10px'}}></span></p>
+                </div>
+                <hr color='white'/>
+            </div>
         </div>
     )
 }
@@ -51,14 +59,14 @@ const Game = ({images}) => {
 
     useEffect(() => {
         if (firstPlayer && playerColor)
-            /*var data = */initGame(images, playerColor)
+            /*var data = */initGame(images, playerColor, firstPlayer)
     })
 
     if (!firstPlayer)
         return <WhoBegin setFirstPlayer={setFirstPlayer}/>
     if (!playerColor)
         return <ChooseYourColor setPlayerColor={setPlayerColor} images={images}/>
-    return <StartGame images={images} firstPlayer={firstPlayer} playerColor={playerColor}/>
+    return <Board images={images} firstPlayer={firstPlayer} playerColor={playerColor}/>
 }
 
 const Humanvsia = ({images}) => {

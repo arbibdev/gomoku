@@ -1,3 +1,5 @@
+import getRandomInt from '../../tools/getRandomInt'
+
 const getHumanVsIa = () => {
     return (
         [
@@ -44,10 +46,6 @@ const getHumanVsHuman = () => {
             [1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1]
         ]
     )
-}
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
 }
 
 const printText = (data, images, text) => {
