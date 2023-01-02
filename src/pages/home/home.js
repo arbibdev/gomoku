@@ -13,11 +13,11 @@ const Buttons = ({buttons}) => {
     return (
         <div className={styles.container}>
             <div className={styles.button} style={{backgroundImage:`url(${buttons.humanvsia.src}`}}>
-                <div className={styles.hvsia} onClick={() => navigate('/humanvsia')}>
+                <div className={styles.hvsia} onClick={() => navigate('/humanvsai')}>
                 </div>
             </div>
             <div className={styles.button} style={{backgroundImage:`url(${buttons.humanvshuman.src}`}}>
-                <div className={styles.hvsh}>
+                <div className={styles.hvsh} onClick={() => navigate('/humanvshuman')}>
                 </div>
             </div>
         </div>

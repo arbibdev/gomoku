@@ -45,3 +45,23 @@
 .colorButton:hover{
     transform: scale(1.5);
 }
+
+@keyframes newGameButton {
+    from {
+        border:5px solid white;
+    }
+    to {
+        border:5px solid black;
+    }
+}
+
+.newGameButton{
+    border:5px solid;
+    animation-duration: 2s;
+    animation-name: newGameButton;
+    animation-iteration-count:infinite
+}
+
+.newGameButton:hover{
+    transform: scale(1.5);
+}

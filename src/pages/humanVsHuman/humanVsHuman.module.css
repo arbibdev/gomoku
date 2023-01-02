@@ -1,0 +1,67 @@
+.canvas{
+    height:70vh;
+}
+
+.infos{
+    width:40vw;
+    height:70vh;
+    border: 5px solid grey;
+    margin-left : 20px;
+}
+
+.canvasContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10vh;
+    height:80vh;
+}
+
+.settingsContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10vh;
+    height:80vh;
+    flex-direction: column;
+}
+
+.whoBeginButton{
+    margin:10px;
+    height:50px;
+    width:60px;
+}
+
+.whoBeginButton:hover{
+    transform: scale(1.5);
+}
+
+.colorButton{
+    margin:30px;
+    height:50px;
+    width:50px;
+}
+
+.colorButton:hover{
+    transform: scale(1.5);
+}
+
+@keyframes newGameButton {
+    from {
+        border:5px solid white;
+    }
+    to {
+        border:5px solid black;
+    }
+}
+
+.newGameButton{
+    border:5px solid;
+    animation-duration: 2s;
+    animation-name: newGameButton;
+    animation-iteration-count:infinite
+}
+
+.newGameButton:hover{
+    transform: scale(1.5);
+}
