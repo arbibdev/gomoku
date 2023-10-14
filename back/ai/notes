@@ -1,0 +1,15 @@
+"
+
+!! réinitialiser l'affichage des captures quand on recommence une partie en cliquant sur 'restart game'
+
+créer un historique détaillé des parties
+option pour commencer une partie avec des pierres déjà posées où l'utlisateur peut placer des pierres où il veut
+permettre de modifier le nombre de pierres à aligner pour gagner
+permettre de choisir la taille du plateau
+permettre à l'utilisateur de pouvoir revenir au coup précedent et d'aller au coup suivant
+permettre à l'utilisateur de pouvoir copier le plateau dans un presse papier pour ensuite l'utiliser pour démarrer une partie
+faire attention qu'il n'y ai pas plusieurs sockets créés inutilement
+créer un lien qui permet d'accéder aux règles du jeu
+créer un "mode correction"
+
+"

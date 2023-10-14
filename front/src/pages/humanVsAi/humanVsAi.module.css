@@ -1,0 +1,116 @@
+.canvas{
+    height:70vh;
+}
+
+.infos{
+    width:40vw;
+    height:70vh;
+    border: 5px solid grey;
+    margin-left : 20px;
+}
+
+.canvasContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10vh;
+    height:80vh;
+}
+
+.settingsContainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10vh;
+    height:80vh;
+    flex-direction: column;
+}
+
+.modifySettingsContainer{
+	margin-top:11vh;
+	margin-bottom:10vh;
+}
+
+.whoBeginButton{
+    margin:10px;
+    height:50px;
+    width:60px;
+}
+
+.whoBeginButton:hover{
+    transform: scale(1.5);
+}
+
+.colorButton{
+    margin:30px;
+    height:50px;
+    width:50px;
+}
+
+.colorButton:hover{
+    transform: scale(1.5);
+}
+
+@keyframes newGameButton {
+    from {
+        border:5px solid white;
+    }
+    to {
+        border:5px solid black;
+    }
+}
+
+.newGameButton{
+    border:5px solid;
+    animation-duration: 2s;
+    animation-name: newGameButton;
+    animation-iteration-count:infinite
+}
+
+.newGameButton:hover{
+    transform: scale(1.5);
+}
+
+.capturesContainer{
+	color : white;
+	display: flex;
+	justify-content: space-around;
+}
+
+.capturedPiecesContainer{
+	background-color: #a6683e;
+	display: flex;
+	justify-content: space-around;
+	height: 50px;
+	align-items: center;
+}
+
+.capturedStoneImg{
+	width : 20px;
+}
+
+.twoCapturedStones{
+	display: flex;
+	flex-direction: column;
+}
+
+.capturedStonesPairs{
+	display: flex;
+}
+
+.settingsButton{
+    margin:10px;
+    height:50px;
+    width:120px;
+}
+
+.settingsButton:hover{
+    transform: scale(1.5);
+	cursor:pointer;
+}
+
+.moveInGameContainer{
+	display: flex;
+	justify-content: space-around;
+
+}
