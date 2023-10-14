@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "expres": "^0.0.5",
-    "express": "^4.18.2",
-    "socket.io": "^4.5.4",
-    "sudo-js": "^1.0.2",
-    "sudo-prompt": "^9.2.1"
-  }
-}
